@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'geocoder'
 gem 'haml'
-
+gem 'figaro'
 gem "gmaps4rails"
 
 source 'https://rails-assets.org' do
