@@ -1,0 +1,8 @@
+%h1 Spots#show
+%p Find me in app/views/spots/show.html.erb
+
+= content_for(:after_js) do
+  = javascript_tag do 
+    $(document).ready(function() {
+    alert("#{j @alert_message}");
+    });
