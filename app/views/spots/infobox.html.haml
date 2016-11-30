@@ -1,0 +1,6 @@
+.infobox.center
+  %h4
+    = link_to spot.name, spot_path(spot), class: 'text-decoration-none orange'
+  = image_tag(spot.infobox_image)
+  %p
+    %i= spot.address

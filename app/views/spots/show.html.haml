@@ -1,8 +1,8 @@
-%h1 Spots#show
-%p Find me in app/views/spots/show.html.erb
+.max-width-4.mx-auto
+  %h1 #{@spot.name}
+  %h2 #{@spot.address}
 
 = content_for(:after_js) do
   = javascript_tag do 
     $(document).ready(function() {
-    alert("#{j @alert_message}");
     });
