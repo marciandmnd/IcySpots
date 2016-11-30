@@ -1,0 +1,20 @@
+%ul{class:"topnav", id:"myTopnav"}
+  %li
+    %a{href:"#home"} Home
+  %li
+    %a{href:"#news"} News
+  %li
+    %a{href:"#contact"} Contact
+  %li
+    %a{href:"#about"} About
+
+  .right
+    - if user_signed_in?
+      %li
+        %a{href: '#'} Profile
+      %li
+        = link_to "Sign out", destroy_user_session_path, method: :delete
+    - else
+      = link_to "Sign in", new_user_session_path
+
+

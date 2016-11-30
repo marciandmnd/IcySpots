@@ -34,6 +34,12 @@ gem "gmaps4rails"
 
 gem "basscss-rails"
 
+gem "devise"
+
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+
+gem 'simple_form'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end

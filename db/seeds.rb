@@ -10,5 +10,12 @@ Spot.destroy_all
 macba = Spot.create(
           name: 'MACBA',
           address: 'Plaça dels Àngels, 1, 08001 Barcelona',
-          infobox_image: 'macba-infobox.jpg'
+          infobox_image: 'macba-infobox.jpg',
+          description: 'What you know about MACBA? Ledges and flat ground for days. Party every night.'
         )
+
+
+User.destroy_all
+
+User.create(email: 'foo@bar.com', password: 'password', password_confirmation: 'password')
+Medium.destroy_all
