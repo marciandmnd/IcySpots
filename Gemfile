@@ -32,6 +32,8 @@ gem 'haml'
 gem 'figaro'
 gem "gmaps4rails"
 
+gem "basscss-rails"
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
