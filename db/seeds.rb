@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Spot.destroy_all
+
+macba = Spot.create(
+          name: 'MACBA',
+          address: 'Plaça dels Àngels, 1, 08001 Barcelona',
+          infobox_image: 'macba-infobox.jpg'
+        )
