@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     end
     @media = Medium.where(user: current_user)
   end
+
+  def profile_show
+    @user = User.find(params[:id])
+  end
 end

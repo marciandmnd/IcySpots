@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "pages/index"
 
   get "/profile" => 'pages#profile'
-
+  get "/profile/:id" => 'pages#profile_show'
   resources :spots do
     resources :media, only: [:new, :create]
   end

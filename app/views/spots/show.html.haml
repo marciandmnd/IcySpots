@@ -12,8 +12,12 @@
         = link_to 'Upload media', new_spot_medium_path(@spot.id), class: 'orange text-decoration-none'
       .clearfix 
         - @media.each do |medium|
-          .col.col-3
-            = image_tag "http://#{medium.s3_path}", class: 'fit', style: 'max-height: 150px;'
+          .col.col-3.p2
+            .featured-medium-card{style: 'box-shadow: 10px 10px 5px #888888;'}
+              .featured-medium-img-wrapper.center{style: 'height:150px; overflow:hidden; object-fit: cover;border: 1px solid orange;'}
+                = image_tag "http://#{medium.s3_path}", style: 'max-height: 150px;'
+              .featured-medium-footer.pr2{style: 'background-color:black;color:white;border-left:1px solid red;border-bottom: 1px solid red;border-right: 1px solid red;'}
+                = link_to "#{medium.user.email}", "/profile/#{medium.user.id}"
 
 
 = content_for(:after_js) do
