@@ -1,12 +1,8 @@
 %ul{class:"topnav", id:"myTopnav"}
   %li
-    %a{href:"#home"} Home
+    = link_to "BRAND", root_path
   %li
-    %a{href:"#news"} News
-  %li
-    %a{href:"#contact"} Contact
-  %li
-    %a{href:"#about"} About
+    = link_to "Spots", spots_path
 
   .right
     - if user_signed_in?
@@ -15,6 +11,7 @@
       %li
         = link_to "Sign out", destroy_user_session_path, method: :delete
     - else
-      = link_to "Sign in", new_user_session_path
+      %li
+        = link_to "Sign in", new_user_session_path
 
 

@@ -1,3 +1,13 @@
 // Place all the styles related to the spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.spots.index{
+  div#map {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

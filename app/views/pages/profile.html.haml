@@ -1,0 +1,13 @@
+.max-width-4.mx-auto
+  .clearfix
+    .col.col-12
+      .py2
+        %h1 Profile
+        %h2= current_user.email
+    .col.col-12
+      %h1 My footy
+      .clearfix
+        - @media.each do |medium|
+          .col.col-3
+            = image_tag "http://#{medium.s3_path}", class: 'fit', style: 'max-height: 150px;'
+  

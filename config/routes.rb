@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get "/sign_up" => "devise/registrations#new" #, as: "new_user_registration" # custom path to sign_up/registration
   end
   devise_for :users
-  get 'pages/index'
+  get "pages/index"
+
+  get "/profile" => 'pages#profile'
 
   resources :spots do
     resources :media, only: [:new, :create]
