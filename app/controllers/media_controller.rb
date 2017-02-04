@@ -1,9 +1,10 @@
 class MediaController < ApplicationController
-  before_action :set_s3_direct_post, only: [:new]
+  # before_action :set_s3_direct_post, only: [:new]
 
   def new
     @medium = Medium.new
     @spot = Spot.find(params[:spot_id])
+    set_s3_direct_post
   end
 
   def create
@@ -17,6 +18,6 @@ class MediaController < ApplicationController
 
   private
   def set_s3_direct_post
-    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{@spot.id}/#{SecureRandom.uuid}-${filename}", success_action_status: '201', acl: 'public-read')
   end
 end
