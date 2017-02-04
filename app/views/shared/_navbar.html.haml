@@ -1,17 +1,17 @@
 %ul{class:"topnav", id:"myTopnav"}
   %li
-    = link_to "BRAND", root_path
+    = link_to "SpotRepo", root_path, class: "orange barrio"
   %li
-    = link_to "Spots", spots_path
+    = link_to "Spot Map", spots_path, class: "white barrio"
 
   .right
     - if user_signed_in?
       %li
-        %a{href: '#'} Profile
+        %a.white.barrio{href: '#'} Profile
       %li
-        = link_to "Sign out", destroy_user_session_path, method: :delete
+        = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'white barrio'
     - else
       %li
-        = link_to "Sign in", new_user_session_path
+        = link_to "Sign in", new_user_session_path, class: 'white barrio'
 
 

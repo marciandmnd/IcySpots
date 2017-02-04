@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+    @featured_spots = Spot.limit(3)
   end
 
   def profile

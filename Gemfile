@@ -38,6 +38,7 @@ gem "devise"
 
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem 'parallax-rails'
 
 gem 'simple_form'
 source 'https://rails-assets.org' do

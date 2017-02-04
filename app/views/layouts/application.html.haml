@@ -5,7 +5,8 @@
     %title Spotrepo
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
-  %body{class: "#{page_class}"}
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Barrio"
+    
     = render 'shared/navbar'
     -if notice
       %p.notice= notice
@@ -18,5 +19,5 @@
     = javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js"
     = javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js"
     = javascript_include_tag 'application'
-
+    
     = yield(:after_js)
