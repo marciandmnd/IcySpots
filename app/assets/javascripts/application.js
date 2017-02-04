@@ -15,6 +15,7 @@
 //= require underscore
 //= require gmaps/google
 //= require parallax.min.js
+//= require lightbox
 //= require_tree .
 
 $('[data-dismiss=flash]').on('click', function(){

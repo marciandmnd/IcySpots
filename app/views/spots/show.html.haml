@@ -15,7 +15,8 @@
           .col.col-3.p2
             .featured-medium-card{style: 'box-shadow: 10px 10px 5px #888888;'}
               .featured-medium-img-wrapper.center{style: 'height:150px; overflow:hidden; object-fit: cover;border: 1px solid orange;'}
-                = image_tag "http://#{medium.s3_path}", style: 'max-height: 150px;'
+                = link_to "http://#{medium.s3_path}",  data: {lightbox: "image-1", title:"My caption"} do
+                  = image_tag "http://#{medium.s3_path}", style: 'max-height: 150px;'
               .featured-medium-footer.pr2{style: 'background-color:black;color:white;border-left:1px solid red;border-bottom: 1px solid red;border-right: 1px solid red;'}
                 = link_to "#{medium.user.email}", "/profile/#{medium.user.id}"
 
