@@ -10,11 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
- @import "basscss/basscss";
+@import "basscss/basscss";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import "color";
+@import "base";
+@import "forms";
+@import "components";
+@import "spots";
+
 .progress {
   max-width: 600px;
   margin:    0.2em 0 0.2em 0;

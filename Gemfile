@@ -39,6 +39,7 @@ gem "devise"
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'parallax-rails'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 gem 'simple_form'
 source 'https://rails-assets.org' do
@@ -51,6 +52,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "erb2haml", :group => :development
 end
 
 group :development do
