@@ -44,3 +44,17 @@ ul.topnav li.icon {display: none;}
     background-color: #1E8BC3; 
   }
 }
+
+// Flash messages
+
+.flash {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  right: 0;
+  box-shadow: 0 4px 2px -2px black;
+  &.notice { 
+    background-color: #00ccff;
+    color: yellow;
+  }
+}

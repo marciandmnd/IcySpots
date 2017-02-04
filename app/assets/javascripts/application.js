@@ -16,3 +16,7 @@
 //= require gmaps/google
 //= require parallax.min.js
 //= require_tree .
+
+$('[data-dismiss=flash]').on('click', function(){
+  $(this).parents('.flash').slideUp();
+});
