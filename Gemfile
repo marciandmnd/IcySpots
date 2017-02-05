@@ -43,6 +43,7 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'lightbox2-rails'
 
 gem 'simple_form'
+
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
@@ -53,7 +54,8 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem "erb2haml", :group => :development
+  gem "erb2haml"
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
