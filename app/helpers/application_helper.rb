@@ -5,11 +5,7 @@ module ApplicationHelper
 
   def flash_messages
     flash.map do |key, msg|
-      content_tag :div, (msg + "<div class='right'>#{icon 'close', class: 'pointer', data: {dismiss: "flash"}}</div>").html_safe, :id => key, :class => "#{key} flash p2 bold"
+      content_tag :div, (msg + "<div class='right'>#{icon 'close', class: 'pointer', data: {dismiss: "flash"}}</div>").html_safe, :id => key, :class => "#{key} flash p2 bold #{'abs' if current_page? root_path}"
     end.join.html_safe
-    # -if notice
-    #   "<div%p.notice= notice
-    # -if alert
-    #   %p.alert= alert
   end
 end

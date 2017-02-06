@@ -10,6 +10,8 @@
       %h1.barrio.orange Featured media
       - if user_signed_in?
         = link_to 'Upload media', new_spot_medium_path(@spot.id), class: 'orange text-decoration-none'
+      - else
+        = link_to "Sign in to add media?", new_user_session_path(redirect_to: new_spot_medium_path(@spot)); 
       .clearfix 
         - @media.each do |medium|
           .col.col-3.p2

@@ -48,10 +48,12 @@ ul.topnav li.icon {display: none;}
 // Flash messages
 
 .flash {
-  position: absolute;
-  top: 47px;
-  left: 0;
-  right: 0;
+  &.abs {
+    position: absolute;
+    top: 47px;
+    left: 0;
+    right: 0;
+  }
   box-shadow: 0 4px 2px -2px black;
   &.notice { 
     background-color: #00ccff;
