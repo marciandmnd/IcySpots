@@ -1,7 +1,12 @@
-.max-width-4.mx-auto
+.max-width-4.mx-auto.p2
   %h1.barrio 
     Add media for 
     %span.orange= @spot.name
+  %h2.barrio Rules
+  %ul
+    %li Uploaded media must be for this spot
+    %li The following media types are allowed: JPG/JPEG, PNG, GIF
+
   = simple_form_for [@spot, @medium], html: {class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host }} do |f|
     = file_field_tag "file"
     = f.submit "Add media", class: "btn btn-primary"
@@ -20,7 +25,6 @@
         else {
           $('form').submit();
         }
-
       });
 
       $(function() {
@@ -35,6 +39,22 @@
           fileInput.after(barContainer);
 
           fileInput.fileupload({
+            add: function(e, data) {
+              var uploadErrors = [];
+              var acceptFileTypes = /^image\/(gif|jpe?g|png)$/i;
+              if(data.originalFiles[0]['type'].length && !acceptFileTypes.test(data.originalFiles[0]['type'])) {
+                  uploadErrors.push('Not an accepted file type');
+              }
+              if(data.originalFiles[0]['size'].length && data.originalFiles[0]['size'] > 5000000) {
+                  uploadErrors.push('Filesize is too big');
+              }
+              if(uploadErrors.length > 0) {
+                  alert(uploadErrors.join("\n"));
+                  fileInput.val("");
+              } else {
+                  data.submit();
+              }
+            },
             fileInput:       fileInput,
             url:             form.data('url'),
             type:            'POST',
