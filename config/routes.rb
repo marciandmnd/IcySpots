@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
-  get 'spot_images/new'
 
-  get 'spot_images/create'
+  devise_for :users, skip: [:sessions], controllers: {sessions: "sessions", passwords: "passwords"}
 
-  devise_scope :user do
-    get "/sign_in" => "devise/sessions#new" # custom path to login/sign_in
-    get "/sign_up" => "devise/registrations#new" #, as: "new_user_registration" # custom path to sign_up/registration
+  as :user do
+    get "signin", to: "devise/sessions#new", as: :new_user_session
+    post "signin", to: "devise/sessions#create", as: :user_session
+    delete "signout", to: "devise/sessions#destroy", as: :destroy_user_session
   end
-  devise_for :users, controllers: {sessions: 'sessions'}
+
   get "pages/index"
 
-  get "/profile" => 'pages#profile'
-  get "/profile/:id" => 'pages#profile_show'
+  get "/profile" => "pages#profile"
+  get "/profile/:id" => "pages#profile_show"
   resources :spots do
     resources :media, only: [:new, :create]
   end
 
-  root 'pages#index'
+  root "pages#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
