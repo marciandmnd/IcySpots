@@ -12,7 +12,27 @@
     = f.submit "Add media", class: "btn btn-primary"
 
 = content_for(:after_js) do
+
   :javascript
+    /* TODO ensure that files submitted conform to image magic number specifications
+
+    function submitForm() {
+       // var fileList = new Array();
+       // fileList = document.getElementById("image").files;
+       var file = document.getElementById("file").files;
+      
+       var fr = new FileReader();
+       if (FileReader && file) {
+          fr.readAsArrayBuffer(file[0]);
+          fr.onload = function () {
+             window.imageData = fr.result;
+             console.log(imageData);
+          };
+       }
+    }
+
+    */
+
     $(document).ready(function() {
       $submit = $('input[type=submit]');
 
@@ -27,13 +47,15 @@
         }
       });
 
+
+
       $(function() {
         $('.directUpload').find("input:file").each(function(i, elem) {
 
           var fileInput    = $(elem);
           var form         = $(fileInput.parents('form:first'));
           var submitButton = form.find('input[type="submit"]');
-          var progressBar  = $("<div class='bar'></div>");
+          var progressBar  = $("<div class='bar p1'></div>");
           var barContainer = $("<div class='progress'></div>").append(progressBar);
 
           fileInput.after(barContainer);
@@ -71,10 +93,9 @@
               submitButton.prop('disabled', true);
 
               progressBar.
-              css('background', 'green').
-              css('display', 'block').
-              css('width', '0%').
-              text("Loading...");
+                css('display', 'block').
+                css('width', '0%').
+                text("Loading...");
             },
             done: function(e, data) {
               submitButton.prop('disabled', false);
