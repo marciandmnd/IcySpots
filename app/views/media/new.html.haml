@@ -9,6 +9,20 @@
 = content_for(:after_js) do
   :javascript
     $(document).ready(function() {
+      $submit = $('input[type=submit]');
+
+      $submit.on('click', function(e){
+        e.preventDefault();
+
+        if($("input:file").val() == ""){
+          alert('Please choose a file!');
+        }
+        else {
+          $('form').submit();
+        }
+
+      });
+
       $(function() {
         $('.directUpload').find("input:file").each(function(i, elem) {
 
