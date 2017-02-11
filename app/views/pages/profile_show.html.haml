@@ -1,8 +1,0 @@
-.max-width-4.mx-auto
-  %h1= @user.email
-
-  .clearfix
-    - @user.media.each do |medium|
-      .col.col-3
-        = image_tag "http://#{medium.s3_path}", class: 'fit', style: 'max-height: 150px;'
-  

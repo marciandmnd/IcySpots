@@ -7,7 +7,7 @@
   .right
     - if user_signed_in?
       %li
-        %a.white.barrio{href: '#'} Profile
+        = link_to "Profile", profile_path, class: "white barrio"
       %li
         = link_to "Sign out", destroy_user_session_path, method: :delete, class: 'white barrio'
     - else

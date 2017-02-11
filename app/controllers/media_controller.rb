@@ -8,7 +8,6 @@ class MediaController < ApplicationController
   end
 
   def create
-    byebug
     @spot = Spot.find(params[:spot_id])
     medium = current_user.media.build(
       s3_path: params[:file],
@@ -16,12 +15,20 @@ class MediaController < ApplicationController
       s3_bucket_object_key: params[:key]
     )
     medium.save
+    flash[:notice] = "Media added successfully!"
     redirect_to spot_path(@spot)
   end
 
   def destroy
-    medium = Medium.find(params[:id]);
+    medium_id = params[:id]
+    medium = Medium.find(medium_id);
     medium.destroy
+    flash.now[:notice] = "Media deleted successfully."
+    render json: {
+      status: 200,
+      flash_html: view_context.flash_messages,
+      medium_id: medium_id
+    }
   end
 
   private
