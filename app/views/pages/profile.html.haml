@@ -10,4 +10,6 @@
         - @media.each do |medium|
           .col.col-3
             = image_tag "http://#{medium.s3_path}", class: 'fit', style: 'max-height: 150px;'
+            = link_to medium_path(medium), method: :delete do
+              = icon('trash')
   

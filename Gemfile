@@ -41,6 +41,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'parallax-rails'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'lightbox2-rails'
+gem 'aws-sdk-rails'
 
 gem 'simple_form'
 

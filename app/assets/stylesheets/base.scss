@@ -15,10 +15,8 @@ body {
 
 a {
   text-decoration: none;
-  color: $orange;
-  &:hover {
-    text-decoration: underline;
-  }
+  &.orange { color: $orange; }
+  &:hover { text-decoration: underline; }
 }
 
 .pointer { cursor: pointer; }

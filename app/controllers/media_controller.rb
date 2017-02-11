@@ -8,12 +8,20 @@ class MediaController < ApplicationController
   end
 
   def create
+    byebug
     @spot = Spot.find(params[:spot_id])
-    medium = current_user.media.build
-    medium.s3_path = params[:file]
-    medium.spot = @spot
+    medium = current_user.media.build(
+      s3_path: params[:file],
+      spot: @spot,
+      s3_bucket_object_key: params[:key]
+    )
     medium.save
     redirect_to spot_path(@spot)
+  end
+
+  def destroy
+    medium = Medium.find(params[:id]);
+    medium.destroy
   end
 
   private
