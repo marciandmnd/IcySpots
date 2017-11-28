@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   get "/profile" => "pages#profile"
   get "/profile/:id" => "pages#profile_show"
+
+  get "/about" => "pages#about"
+  get "/terms-of-service" => "pages#tos", as: :tos
+  get "/privacy-policy" => "pages#privacy", as: :privacy
+
   resources :spots do
     resources :media, only: [:new, :create]
   end
@@ -19,5 +24,4 @@ Rails.application.routes.draw do
   resources :media, only: [:destroy]
 
   root "pages#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
