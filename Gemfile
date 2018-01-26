@@ -26,16 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
-
 gem 'geocoder'
 gem 'haml'
 gem 'figaro'
 gem "gmaps4rails"
-
 gem "basscss-rails"
-
 gem "devise"
-
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'parallax-rails'
